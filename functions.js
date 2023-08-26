@@ -65,7 +65,7 @@ console.log(addTwo.call({prefix: 'answer : ' },6, 5));
 console.log(addTwo.apply({prefix: 'apples : ' }, [4, 2, 5]));
 
 var addAll = function(){
-    debugger;
+    
     var answer = 0;
     [].slice.call(arguments).forEach(function(i){
         answer  = answer  + i;
@@ -82,3 +82,26 @@ var apples = [4, 5, 6, 7, 10, 4, 6, 7];
 
 console.log(addAll.apply(undefined, apples));
 
+
+var doSomething = function(number, callback){
+    var num = callback(number);
+
+    return num;
+
+}
+
+
+var square = function(x){
+    return x*x;
+}
+
+var cube = function(x){
+    return x*x*x;
+}
+
+console.log(doSomething(8,square));
+console.log(doSomething(8,cube));
+
+console.log(doSomething(8,function(x){
+        return x*2;
+}));
