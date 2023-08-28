@@ -5,15 +5,35 @@ var newArray= secret.split("")
 var secretCipherMap={
  
 }
+
+
+secret = secret.split('');
+alphabets = alphabets.split('');
+
+alphabets.forEach(function(letter){
+    
+    if(secret.indexOf(letter)===-1){
+        secret.push(letter);
+    }
+});
+
+alphabets.forEach(function(letter, index){
+    secretCipherMap[secret[index]] = letter ;
+})
+
+
 var cipherMapKeys = Object.keys(secretCipherMap);
 //console.log(cipherMapKeys);
 var invertCipherMap = {}
+
 cipherMapKeys.forEach(function(_invertKey){
     var value = secretCipherMap[_invertKey];
     //console.log(value);
     invertCipherMap[value]= _invertKey;
     //console.log(invertCipherMap);
 })
+
+
 var processText = function(text,cipherMap){
     var charArray = text.split("");
     var encodedArray = charArray.map(function(char){
