@@ -1,0 +1,15 @@
+31-08-2023:
+    - List.getItem(id)
+        -> return ListItem (id: id);
+        -- 
+    
+    - List.makeDependant(id, dependantId)
+
+    - ListItem.dependsOn(_listItem)
+        -> this.dependant = _listItem;
+        --> (Adv.) Check for circular dependency
+    
+    - ListItem.finish()
+        ->> (ADD:) Check for dependant.
+                - If dependant is finished then finish this task
+                - Else: Error: Previous task is not finished: (ID);

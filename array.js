@@ -115,7 +115,23 @@ console.log(arr.indexOf('a'));
 
 
 
+var newArr = [
+    {id: 1, name:'ishaan'},
+    {id: 2, name:'ranjita'},
+    {id: 3, name:'vishal'},
+    {id: 4, name:'gurpal'},
+]
 
+
+var getFromNewArr = function(id){
+
+    for(var i=0;i<newArr.length;++i){
+        var item = newArr[i];
+        if(item.id === id){
+            return item;
+        }
+    }
+}
 
 
 
