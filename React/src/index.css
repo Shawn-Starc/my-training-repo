@@ -1,0 +1,14 @@
+:root{
+  --page-background: #f6f6ff;
+  --primary-text: black;
+  --component-background: #f4f4f4;
+  --component-border: #d0d0d0;
+}
+
+body, html{
+  margin: 0;
+  font-size: 15px;
+  background: var(--page-background);
+  HEIGHT: 100%;
+  WIDTH: 100%;
+}

@@ -1,0 +1,35 @@
+.page-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 58px;
+    border-bottom: 1px solid var(--component-border);
+    align-items: center;
+    display: flex;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.separator {
+    height: 60%;
+    width: 2px;
+    border-radius: 3px;
+    background: var(--component-border);
+    margin: 0 15px;
+}
+
+.header-spacer{
+    width: 100%;
+}
+
+.profile-pic-icon {
+    height: 40px;
+    width: 40px;
+    background: var(--component-border);
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 30px;
+}

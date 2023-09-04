@@ -1,0 +1,8 @@
+#root, .page-container {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.page-container {
+  padding-top: 58px;
+}

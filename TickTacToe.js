@@ -1,11 +1,12 @@
 
-
+var id = 1;
 var TTTBoard = function TTTBoardConstructor(defaultBoard){
     this.board = [
         ['','',''],
         ['','',''],
         ['','','']
     ];
+    this.id = 'board-'+(id++);
     (defaultBoard && this.parseBoard(defaultBoard));
 }
 
@@ -126,7 +127,7 @@ console.log(newBoard.getBoardHash());
 console.log(newBoard.printBoard());
 
 
-
+var BoardMap = {};
 
 var TickTacBoardTree = function(){
 
@@ -145,6 +146,9 @@ TickTacBoardTree.prototype.createTree = function(board){
         currentHash = board.getBoardHash(),
         newBoard = new TTTBoard(currentHash),
         nextMove = board.lastMove==='X'?'0':'X';
+        board.draw=0;
+        board.winX=0;
+        board.win0=0;
 
     for(var row=0;row<3;++row){
         for(var col=0;col<3;++col){
@@ -152,18 +156,39 @@ TickTacBoardTree.prototype.createTree = function(board){
             var isAbleToMakeMove = newBoard.makeMove(row, col, nextMove);
             if(isAbleToMakeMove){
                 
-                // This is to update the TTTBoard's object into a valid tree Node.
-                // This will contain the next created boards for the next move. 
-                newBoard.items = [];
+                var newBoardHash = newBoard.getBoardHash();
+                
+                if(!BoardMap[newBoardHash]){
+                    
+                    BoardMap[newBoardHash] = newBoard;
+                    // This is to update the TTTBoard's object into a valid tree Node.
+                    // This will contain the next created boards for the next move. 
+                    newBoard.items = [];
 
+                    var currentStatus = newBoard.getStatus();
+                    if(currentStatus==='pending'){
+                        // This will further make more moves to the nrew board;
+                        this.createTree(newBoard);
+                    }else{
+
+                        if(currentStatus==='draw'){
+                            newBoard.draw = 1;
+                        }else{
+                            var key = 'win'+currentStatus;
+                            newBoard[key] = 1;
+                        }
+
+                    }
+               }else{
+                   newBoard = BoardMap[newBoardHash];
+               }
+
+               board.draw =  board.draw + (newBoard.draw || 0);
+               board.winX =  board.winX + (newBoard.winX || 0);
+               board.win0 =  board.win0 + (newBoard.win0 || 0);
                 // As we are able to make a move in the current row and col. This is a valid move for the previous board which is coming to the function.
                 // Hence adding the newBaord to the items of the previousBoard which is sent to the function as the argument; 
                 items.push(newBoard);
-
-                if(newBoard.getStatus()==='pending'){
-                    // This will further make more moves to the nrew board;
-                    this.createTree(newBoard);
-                }
 
                 newBoard = new TTTBoard(currentHash);
 
@@ -180,3 +205,4 @@ var TTTAI = new TickTacBoardTree();
 console.timeEnd('board-creation');
 
 console.log(TTTAI);
+console.log('Created Boards : '+id);
