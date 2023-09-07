@@ -11,4 +11,5 @@ body, html{
   background: var(--page-background);
   HEIGHT: 100%;
   WIDTH: 100%;
+  font-family: 'Poppins', sans-serif;
 }

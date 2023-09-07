@@ -1,0 +1,23 @@
+.search-bar {
+    flex-grow: 1;
+    width: 512px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ececec;
+    color: var(--text-color);
+    display: flex;
+    padding: 8px;
+    padding-right: 12px;
+}
+.search-bar-input{
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline:none;
+}
+
+.search-bar.search-bar-focused {
+    background: #a8a8a8;
+}
