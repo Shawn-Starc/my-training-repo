@@ -2,9 +2,10 @@
     padding: 20px;
     display: inline-block;
     width: 360px;
-    height: auto;
+    height: min-content;
     background: beige;
     border-radius: 10px;
+    flex-shrink: 0;
 }
 
 .card-caption {

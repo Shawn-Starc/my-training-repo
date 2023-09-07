@@ -13,11 +13,12 @@
 
 .separator {
     height: 60%;
-    width: 2px;
+    width: 1.5px;
     border-radius: 3px;
     background: var(--component-border);
     margin: 0 15px;
-    display: flex
+    display: flex;
+    flex-shrink: 0;
 }
 
 .header-spacer{

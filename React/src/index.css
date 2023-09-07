@@ -1,15 +1,136 @@
 :root{
-  --page-background: #f6f6ff;
-  --primary-text: black;
-  --component-background: #f4f4f4;
-  --component-border: #d0d0d0;
+
+  --base00: #f9f9ff;
+  --base03: #e8e8f8;
+  --base06: #d7d7e7;
+  --base09: #c6c6d6;
+  --base12: #b5b5c5;
+  --base15: #a4a4b4;
+  --base18: #9393a3;
+  --base21: #727282;
+  --base24: #515161;
+  --base27: #303040;
+  --base30: #191929;
+  --base33: #0a0a0a;
+
+  --page-background: var(--base03);
+  --primary-text: var(--base33);
+
+  --component-background: var(--base09);
+  --component-border: var(--base18);
+
+  --component-hover-background: var(--base12);
+  --component-focus-background: var(--base15);
+
+
+
+
+}
+
+*{
+  box-sizing: border-box;
 }
 
 body, html{
   margin: 0;
   font-size: 15px;
   background: var(--page-background);
-  HEIGHT: 100%;
-  WIDTH: 100%;
+  height: 100%;
+  width: 100%;
   font-family: 'Poppins', sans-serif;
 }
+
+.app-full-container{
+  height: 100%;
+  width: 100%;
+}
+
+.app-flex-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.app-flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.app-over-hidden{
+  overflow: hidden;
+}
+
+
+.app-over-auto{
+  overflow: auto;
+}
+
+.app-h-lg{
+  font-size: 42px;
+  line-height: 48px;
+  font-weight: 600;
+}
+
+.app-h-md{
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 600;
+}
+
+.app-h-sm{
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+.app-h-xs{
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.app-label-lg{
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.app-label-md{
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.app-label-sm{
+  font-size: 12px;
+  line-height: 15px;
+}
+ 
+.app-caption{
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 300;
+}
+
+/** Adding gap in items if display: flex is used **/
+.app-gap-5x{
+  gap: 15px;
+}
+
+
+/** TODO: ADD PADDING CLASSES FROM 1X TO 30X top, bottom, right, left, x, y **/
+
+.app-pad-5x{
+  padding: 15px;
+}
+
+.app-pad-10x{
+  padding: 30px;
+}
+
+.app-pad-3x-b{
+  padding-bottom: 9px;
+}
+
+.app-pad-3x-t{
+  padding-top: 9px;
+}
+
+/************/
