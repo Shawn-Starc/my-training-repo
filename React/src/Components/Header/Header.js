@@ -1,18 +1,21 @@
 import React from 'react';
 import './header.css';
+import {SearchBar} from '../SearchBar/SearchBar';
 
 var PageHeader = function(props){
     
-    const {logo, iconsSet, title, profileIcon} = props;
+    const {logo, iconsSet, searchbar, title, profileIcon} = props;
 
     return (<div className="page-header">
                 {logo}
                 <div className="separator"></div>
                 {title}
                 <div className="separator"></div>
+                <SearchBar> </SearchBar>
                 {/*SearchBar*/}
                 <div className="header-spacer"></div>
-                {/*Icon Bar*/}
+                {iconsSet}
+                {searchbar}
                 {/*
 
                     [

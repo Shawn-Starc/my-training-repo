@@ -17,6 +17,7 @@
     border-radius: 3px;
     background: var(--component-border);
     margin: 0 15px;
+    display: flex
 }
 
 .header-spacer{
